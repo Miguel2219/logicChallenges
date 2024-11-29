@@ -1,27 +1,26 @@
 package Exercises01;
 
-public class hola {
+public class isogram {
     public static boolean esIsogram(String str) {
-        // Si el string está vacío, es un isograma
+
         if (str == null || str.isEmpty()) {
             return true;
         }
 
-        // Convertir a minúsculas y remover acentos
+
         str = quitarAcentos(str.toLowerCase());
 
-        // Si contiene espacios, no es un isograma
         if (str.contains(" ")) {
             return false;
         }
 
-        // Limpiar el string (solo mantener letras)
+
         str = str.replaceAll("[^a-z]", "");
 
-        // Verificar letras repetidas
+
         for (int i = 0; i < str.length(); i++) {
             char currentChar = str.charAt(i);
-            // Si encontramos la misma letra en otra posición, no es un isograma
+
             if (str.indexOf(currentChar) != str.lastIndexOf(currentChar)) {
                 return false;
             }
@@ -41,11 +40,11 @@ public class hola {
     }
 
     public static void main(String[] args) {
-        System.out.println(esIsogram("")); // true
-        System.out.println(esIsogram("reto")); // true
-        System.out.println(esIsogram("múrcielago")); // true
-        System.out.println(esIsogram("PeRrO")); // false
-        System.out.println(esIsogram("GaTo")); // true
-        System.out.println(esIsogram("dos palabras")); // false
+        System.out.println(esIsogram("")); 
+        System.out.println(esIsogram("reto")); 
+        System.out.println(esIsogram("murcielago")); 
+        System.out.println(esIsogram("Perro")); 
+        System.out.println(esIsogram("GaTo")); 
+        System.out.println(esIsogram("dos palabras")); 
     }
 }
